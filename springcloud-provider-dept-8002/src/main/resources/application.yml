@@ -1,0 +1,41 @@
+
+server:
+  port: 8002
+
+
+mybatis:
+  #���ñ���,pojo�İ���
+  type-aliases-package: com.cloud.pojo
+  #mapper.xml�ļ���·��
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #mybatis���������ļ�
+  config-location: classpath:mybatis/mybatis-config.xml
+
+spring:
+  application:
+    #Ӧ�õ�����,��eureka�п��Բ鿴,�����ṩ�߼�Ⱥ��ʱ�򱣳ַ�������һ��
+    name: springcloud-provider-dept
+    #���ݿ����
+  datasource:
+    #url��driverclassname��8.0���ϰ汾��д��,��������ʱ��
+    url: jdbc:mysql://192.168.233.131:3306/demo2?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    #�޸����ݿ����ӳ�Ϊdruid
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#����eureka,����ע�ᵽ����
+eureka:
+  client:
+    service-url:
+      #������:defaultZone: http://localhost:7001/eureka/
+      #��Ⱥ��
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    #�޸�Status,����
+    instance-id: springcloud-provider-dept-8002
+#actuator���ľ�������,����Status�����ӽ�ȥ�ľ�����Ϣ
+info:
+  app.name: cloud
+  company.name: com.cloud
