@@ -2,6 +2,7 @@ package com.cloud.service;
 
 import com.cloud.pojo.Dept;
 import feign.hystrix.FallbackFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -10,6 +11,8 @@ import java.util.List;
  * @version 1.0
  * @date 2020/8/11 11:24
  */
+@Component
+// 实现FallbackFactory接口
 public class FeignDeptClientServiceFallbackFactory implements FallbackFactory {
     // 重写create方法,返回springcloud-api该服务的 service 接口,重写接口中的方法,这里就演示一个getDeptById()
     @Override

@@ -1,0 +1,40 @@
+server:
+  port: 8001
+
+
+mybatis:
+  #???????,pojo?????
+  type-aliases-package: com.cloud.pojo
+  #mapper.xml?????¡¤??
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #mybatis???????????
+  config-location: classpath:mybatis/mybatis-config.xml
+
+spring:
+  application:
+
+    name: springcloud-provider-dept
+
+  datasource:
+    #url??driverclassname??8.0????·Ú??§Õ??,???????????
+    url: jdbc:mysql://192.168.233.131:3306/demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    #ÄãºÃ
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#????eureka,???????????
+eureka:
+  client:
+    service-url:
+      #??????:defaultZone: http://localhost:7001/eureka/
+      #?????
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    #ÐÞ¸ÄStatus,ÃèÊö
+    instance-id: springcloud-provider-dept-hystrix-8001
+#actuator???????????,????Status????????????????
+info:
+  app.name: cloud
+  company.name: com.cloud

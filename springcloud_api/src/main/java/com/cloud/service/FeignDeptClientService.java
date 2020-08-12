@@ -14,7 +14,8 @@ import java.util.List;
  * @version 1.0
  * @date 2020/8/11 10:45
  */
-@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT")
+// fallbackFactory是Hystrix服务降级时需要修改的
+@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT",fallbackFactory = FeignDeptClientServiceFallbackFactory.class)
 @Component
 public interface FeignDeptClientService {
     @GetMapping("/dept/{id}")

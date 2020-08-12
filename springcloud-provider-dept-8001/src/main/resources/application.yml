@@ -3,38 +3,38 @@ server:
 
 
 mybatis:
-  #ÅäÖÃ±ğÃû,pojoµÄ°üÃû
+  #ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½,pojoï¿½Ä°ï¿½ï¿½ï¿½
   type-aliases-package: com.cloud.pojo
-  #mapper.xmlÎÄ¼şµÄÂ·¾¶
+  #mapper.xmlï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
   mapper-locations: classpath:mybatis/mapper/*.xml
-  #mybatisºËĞÄÅäÖÃÎÄ¼ş
+  #mybatisï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
   config-location: classpath:mybatis/mybatis-config.xml
 
 spring:
   application:
-    #Ó¦ÓÃµÄÃû³Æ,ÔÚeurekaÖĞ¿ÉÒÔ²é¿´,·şÎñÌá¹©Õß¼¯ÈºµÄÊ±ºò±£³Ö·şÎñÃû³ÆÒ»ÖÂ
+    #Ó¦ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½eurekaï¿½Ğ¿ï¿½ï¿½Ô²é¿´,ï¿½ï¿½ï¿½ï¿½ï¿½á¹©ï¿½ß¼ï¿½Èºï¿½ï¿½Ê±ï¿½ò±£³Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
     name: springcloud-provider-dept
-    #Êı¾İ¿âÏà¹Ø
+    #ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½
   datasource:
-    #urlºÍdriverclassnameÊÇ8.0ÒÔÉÏ°æ±¾µÄĞ´·¨,ĞÂÔö×îºóµÄÊ±Çø
+    #urlï¿½ï¿½driverclassnameï¿½ï¿½8.0ï¿½ï¿½ï¿½Ï°æ±¾ï¿½ï¿½Ğ´ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
     url: jdbc:mysql://192.168.233.131:3306/demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    #ĞŞ¸ÄÊı¾İ¿âÁ¬½Ó³ØÎªdruid
+    #ï¿½Ş¸ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Îªdruid
     type: com.alibaba.druid.pool.DruidDataSource
 
-#ÅäÖÃeureka,·şÎñ×¢²áµ½ÄÄÀï
+#ï¿½ï¿½ï¿½ï¿½eureka,ï¿½ï¿½ï¿½ï¿½×¢ï¿½áµ½ï¿½ï¿½ï¿½ï¿½
 eureka:
   client:
     service-url:
-      #µ¥»ú°æ:defaultZone: http://localhost:7001/eureka/
-      #¼¯Èº°æ
+      #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:defaultZone: http://localhost:7001/eureka/
+      #ï¿½ï¿½Èºï¿½ï¿½
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    #ĞŞ¸ÄStatus,ÃèÊö
+    #ï¿½Ş¸ï¿½Status,ï¿½ï¿½ï¿½ï¿½
     instance-id: springcloud-provider-dept-8001
-#actuator°üµÄ¾ßÌåÅäÖÃ,¼´µãStatusµÄÁ´½Ó½øÈ¥µÄ¾ßÌåĞÅÏ¢
+#actuatorï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Statusï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½È¥ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 info:
   app.name: cloud
   company.name: com.cloud
